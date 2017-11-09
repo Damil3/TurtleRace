@@ -4,6 +4,7 @@ import graphics.Point
 import cslib.window.SimpleWindow
 import java.awt.Color
 
+
 class RaceTurtle(
   override val window: RaceWindow,
   var nbr: Int,
@@ -18,10 +19,11 @@ class RaceTurtle(
   val defaultStep = 6
 
   /** Tar ett steg av slumpmässig längd i Range(0,defaultStep) */
-  def raceStep(): Unit = ???
+  def raceStep(): Unit = forward(scala.util.Random.nextInt(defaultStep))
+
 
   /** Återgår till initPosition */
-  def restart(): Unit  = ???
+  def restart(): Unit  = home
 
   override def toString: String = s"#$nbr name: $name"
 }
